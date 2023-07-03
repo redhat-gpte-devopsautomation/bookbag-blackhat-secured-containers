@@ -38,4 +38,4 @@ git push
 ----
 . Switch back to your Openshift Console and select *Pipelines > Pipelines* from the left menu and ensure that the project is *software-supply-chain*.  Your changes would have triggered 2 new pipeline runs.
 +
-image:images/codeserver-pipeline-runs.png[images/codeserver-pipeline-runs.png]
+image:images/openshift-pipeline-runs.png[images/openshift-pipeline-runs.png]
