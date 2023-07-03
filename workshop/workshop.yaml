@@ -1,5 +1,5 @@
 ---
-name: Bookbag Template
+name: BlackHat - Image signing in a software supply chain
 modules:
   activate:
     - overview
