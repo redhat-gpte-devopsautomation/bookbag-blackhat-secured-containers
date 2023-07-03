@@ -3,7 +3,6 @@
 :openshift_cluster_admin_username: %openshift_cluster_admin_username%,
 :openshift_cluster_admin_password: %openshift_cluster_admin_password%,
 :app_dev_url: %app_dev_url%,
-:test: %app_dev_password%
 
 === Exploring your pipelines
 
@@ -38,6 +37,6 @@ image:images/openshift-unsigned-pipeline.png[images/openshift-unsigned-pipeline.
 These two pipelines have already run and should both be completed.  Image signing and signature verification are not yet enabled.
 . Click on the globex app link below:
 +
-%globex_ui%/[Globex Application]
+%app_dev_url%/[Globex Application]
 +
 The front end you’re viewing now is the deployed container image the pipeline app-globex-ui-pipeline has built.
