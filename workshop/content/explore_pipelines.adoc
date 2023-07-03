@@ -4,8 +4,6 @@
 :openshift_cluster_admin_password: %openshift_cluster_admin_password%,
 :app_dev_url: %app_dev_url%,
 
-=== Exploring your pipelines
-
 This workshop has provisioned 2 piplines for you.  In this section, we will take a closer look at them:
 
 [arabic]

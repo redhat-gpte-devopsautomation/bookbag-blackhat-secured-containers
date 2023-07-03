@@ -6,8 +6,6 @@
 :rhacs_admin_user_name: %rhacs_admin_user_name%
 :rhacs_admin_password: %rhacs_admin_password%
 
-=== Relocate Application To Primary
-
 [arabic]
 In this section of the workshop, we will introduce Tekton Chains, which enables image signing in our pipelines i.e. any image built in our pipeline will be signed using a private key.  A public key will be used to verify signatures.  Tekton has a few options available to sign your images:
 
