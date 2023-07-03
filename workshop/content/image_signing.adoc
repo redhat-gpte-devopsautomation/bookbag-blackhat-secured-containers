@@ -23,7 +23,7 @@ To get started signing things in Chains, you must generate a keypair and instruc
 ssh -o StrictHostKeyChecking=no %bastion_ssh_user_name%@%bastion_public_hostname%
 ----
 +
-Use the below password:
+Use the following password:
 +
 [source, subs="attributes", role="execute"]
 ----
@@ -32,7 +32,7 @@ Use the below password:
 +
 . Configure Tekton Chains by running the below commands:
 +
-[source, subs="attributes", role="execute"]
+[source, role="execute"]
 ----
 cd
 cat <<EOF >> chains.yaml
@@ -50,3 +50,27 @@ spec:
 EOF
 oc apply -f chains.yaml
 ----
++
+. Run the next command a few times to check if the deployment is available:
++
+[source, role="execute"]
+----
+oc get deployment tekton-chains-controller -n openshift-pipelines
+----
++
+. Once the deployment shows 1 pod available, run the following command to create a secret called signing-secrets in the openshift-pipelines namespace which Chains will use to sign your images:
++
+[source, role="execute"]
+----
+COSIGN_PASSWORD=openshift cosign generate-key-pair k8s://openshift-pipelines/signing-secrets
+----
++
+. Print the public key:
++
+[source, role="execute"]
+----
+cat cosign.pub
+----
+A public key will be created in your home directory called cosign.pub.  This key is used for image signature verification.
++
+. Copy the key as you will need it for the next section.
