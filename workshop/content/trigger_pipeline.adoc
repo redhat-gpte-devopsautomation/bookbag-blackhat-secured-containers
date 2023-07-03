@@ -1,30 +1,41 @@
 :guid: %guid%,
-:code_server_url: %code_server_url%,
-:code_server_password: %code_server_password%,
+:gitea_repo_url: %gitea_repo_url%,
 
 [arabic]
-. Login to %code_server_url%/[Code Server] with the password *%code_server_password%*.
+To get our pipeline to sign our image, we need to trigger a new pipeline run.  To do this we need to update a file in our source code repository.  This change will initiate a webhook call that will trigger a run of our pipeline.
+
+. Run the below command to clone the source code repository to your lab environment:
 +
-image:images/codeserver-login.png[images/codeserver-login.png]
-. Locate the globex-ui project on the left side and open the README.md file
+[source, role="execute"]
+----
+cd
+git clone %gitea_repo_url%
+----
+. Make a change to README.md file in the source code:
 +
-image:images/codeserver-file.png[images/codeserver-file.png]
-. Add some text to the end of this file.
+[source, role="execute"]
+----
+cd globex-ui
+echo "Making a change..." >> README.md
+----
+. Stage your changes:
 +
-image:images/codeserver-file-edit.png[images/codeserver-file-edit.png]
-. Click *File > Save*
-. Click the *Source Control* icon on the left pane
+[source, role="execute"]
+----
+git add .
+----
+. Commit your changes:
 +
-image:images/codeserver-src-ctrl.png[images/codeserver-src-ctrl.png]
-. Stage your changes by clicking the *+* sign next to the README.md file
+[source, role="execute"]
+----
+git commit -m "Some text added..."
+----
+. Push your changes back to the repository
 +
-image:images/codeserver-stage-changes.png[images/codeserver-login.png]
-. Enter a comment for your commit and press the *Commit* button
-+
-image:images/codeserver-src-commit.png[images/codeserver-src-commit.png]
-. Sync your changes with the *Sync Changes* button
-+
-image:images/codeserver-sync-changes.png[images/codeserver-sync-changes.png]
+[source, role="execute"]
+----
+git push
+----
 . Switch back to your Openshift Console and select *Pipelines > Pipelines* from the left menu and ensure that the project is *software-supply-chain*.  Your changes would have triggered 2 new pipeline runs.
 +
 image:images/codeserver-pipeline-runs.png[images/codeserver-pipeline-runs.png]
