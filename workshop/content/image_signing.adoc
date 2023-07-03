@@ -1,7 +1,7 @@
 :guid: %guid%,
-:bastion_server: %bastion_server%,
-:bastion_user: %bastion_user%,
-:bastion_password: %bastion_password%,
+:bastion_public_hostname: %bastion_public_hostname%,
+:bastion_ssh_password: %bastion_ssh_password%,
+:bastion_ssh_user_name: %bastion_ssh_user_name%,
 
 === Relocate Application To Primary
 
