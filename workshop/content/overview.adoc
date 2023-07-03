@@ -1,5 +1,3 @@
-== Overview
-
 In this compact yet comprehensive workshop, we aim to strengthen your software lifecycle through enhanced DevSecOps processes. The first part focuses on Tekton Chains, an open-source tool for securing your software supply chain, where you'll learn to sign images, store attestations, and audit pipelines. Container image signing allows users to add a digital “fingerprint” to an image. This fingerprint can later be cryptographically tested to verify trust. This allows users of container images to verify origin and trust the content included in container images.
 
 The second part introduces Red Hat Advanced Cluster Security (ACS), illustrating its application in achieving comprehensive security for your Kubernetes applications. By the end of this workshop, your understanding of secure, efficient, and auditable DevSecOps processes will be significantly bolstered.

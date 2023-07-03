@@ -12,5 +12,5 @@ modules:
   trigger_pipeline:
     name: Triggering your pipelines
     exit_sign: Continue
-  reults:
+  results:
     name: Results
