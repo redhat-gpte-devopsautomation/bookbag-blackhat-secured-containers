@@ -20,7 +20,14 @@ To get started signing things in Chains, you must generate a keypair and instruc
 +
 [source,role="execute"]
 ----
-ssh -o StrictHostKeyChecking=no %bastion_user%@%bastion_server%
+ssh -o StrictHostKeyChecking=no %bastion_ssh_user_name%@%bastion_public_hostname%
+----
++
+Use the below password:
++
+[source,role="execute"]
+----
+%bastion_ssh_password%
 ----
 +
 . You are again going to make an update to the price of the Quarkus T-shirt.  Update the price by running the below commands:
