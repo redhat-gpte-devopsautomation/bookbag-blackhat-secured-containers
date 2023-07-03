@@ -3,7 +3,7 @@ modules:
   overview:
     name: Overview
     exit_sign: Continue
-  eplore_pipelines:
+  explore_pipelines:
     name: Exploring your pipelines
     exit_sign: Continue
   image_signing:
