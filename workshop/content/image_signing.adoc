@@ -1,16 +1,26 @@
 :guid: %guid%,
-:openshift_cluster_console_url: %openshift_cluster_console_url%,
-:openshift_cluster_admin_username: %openshift_cluster_admin_username%,
-:openshift_cluster_admin_password: %openshift_cluster_admin_password%,
+:bastion_server: %bastion_server%,
+:bastion_user: %bastion_user%,
+:bastion_password: %bastion_password%,
 
 === Relocate Application To Primary
 
 [arabic]
-. You will now attempt to relocate/failback the application to the primary cluster.  Before we do that, we want to ensure that any changes made on the secondary cluster are preserved when relocating back to the primary cluster. Open a terminal, login to the secondary cluster %api_url% with your credentials username: %openshift_cluster_admin_username% and password: %openshift_cluster_admin_password%.
+In this section of the workshop, we will introduce Tekton Chains, which enables image signing in our pipelines i.e. any image built in our pipeline will be signed using a private key.  A public key will be used to verify signatures.  Tekton has a few options available to sign your images:
+
+* x509
+* Cosign
+* KMS
+* EXPERIMENTAL: Keyless signing
+
+In this workshop, we will be using Cosign.
+To get started signing things in Chains, you must generate a keypair and instruct Chains to sign with it via an Openshift secret. Chains expect a private key and password, if the key is encrypted, to exist in a Kubernetes secret signing-secrets in the openshift-pipelines namespace.
+
+. Login into your bastion server by executing the below command:
 +
-[source, bash]
+[source,role="execute"]
 ----
-oc login -u %openshift_cluster_admin_username% -p %openshift_cluster_admin_password% https://api.cluster-x9sc5-2.sandbox2623.opentlc.com
+ssh -o StrictHostKeyChecking=no %bastion_user%@%bastion_server%
 ----
 +
 . You are again going to make an update to the price of the Quarkus T-shirt.  Update the price by running the below commands:
