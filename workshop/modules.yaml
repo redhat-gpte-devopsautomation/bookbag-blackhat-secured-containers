@@ -1,0 +1,16 @@
+---
+modules:
+  overview:
+    name: Overview
+    exit_sign: Continue
+  eplore_pipelines:
+    name: Exploring your pipelines
+    exit_sign: Continue
+  image_signing:
+    name: Enable image signing
+    exit_sign: Continue
+  trigger_pipeline:
+    name: Triggering your pipelines
+    exit_sign: Continue
+  reults:
+    name: Results

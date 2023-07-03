@@ -1,0 +1,59 @@
+:guid: %guid%,
+:openshift_cluster_console_url: %openshift_cluster_console_url%,
+:openshift_cluster_admin_username: %openshift_cluster_admin_username%,
+:openshift_cluster_admin_password: %openshift_cluster_admin_password%,
+
+=== Relocate Application To Primary
+
+[arabic]
+. You will now attempt to relocate/failback the application to the primary cluster.  Before we do that, we want to ensure that any changes made on the secondary cluster are preserved when relocating back to the primary cluster. Open a terminal, login to the secondary cluster %api_url% with your credentials username: %openshift_cluster_admin_username% and password: %openshift_cluster_admin_password%.
++
+[source, bash]
+----
+oc login -u %openshift_cluster_admin_username% -p %openshift_cluster_admin_password% https://api.cluster-x9sc5-2.sandbox2623.opentlc.com
+----
++
+. You are again going to make an update to the price of the Quarkus T-shirt.  Update the price by running the below commands:
++
+[source, bash]
+----
+POD=$(oc get pods -n globex | grep catalog-database | awk '{print $1}')
+oc exec -it pod/$POD -n globex -- psql --dbname catalog --command "update catalog set price = 20 where name = 'Quarkus T-shirt';"
+----
++
+. Confirm if the price has updated to by switching back to the Globex application on the secondary cluster and refresh the page.  Select the last page (6) and notice that the price of the Quarkust T-shirt is now *$20.00*
++
+image:images/secondary-price-updated.png[images/secondary-price-updated.png]
++
+. Go back to the RHACM console and select *Applications* and filter on *Subscription*.  Click the 3 dots at the end of the *globex* application and select *Relocate application*.
++
+image:images/rhacm-relocate-menu.png[images/rhacm-relocate-menu.png]
++
+. Provide the following details on the popup:
+.. *Select policy*: drsync5m
+.. *Target cluster*: primary
+.. *Select subscriptions group*: globex-subscription-1
++
+image:images/rhacm-relocate-application.png[images/rhacm-relocate-application.png]
++
+NOTE: The subscription group may not be in a ready state to select.  Wait a few minutes and try again.
+.. Click *Initiate*
+. You will notice that the pods on the secondary cluster in the *globex* namespace will start terminating as the app starts relocating back to the primary cluster.
++
+image:images/secondary-pods-terminated.png[images/secondary-pods-terminated.png]
++
+. Switch to the *primary* cluster console and click *Workloads->Pods* on the left menu.  Ensure your selected project is *globex*.  Notice that the application pods have been recreated in this namespace.
++
+image:images/primary-pods-created.png[images/primary-pods-created.png]
++
+. Next, click *Networking->Routes* on the left menu and then click on the *Location* link of the *globex-ui* route.
++
+image:images/primary-globex-route.png[images/primary-globex-route.png]
++
+. Once you've clicked the link you will be redirected to globex online store front end.  Select *Cool Stuff Store* at the top of the page.
++
+image:images/primary-globex-landing.png[images/primary-globex-landing.png]
++
+. Select the last page (6) and notice that the price of the Quarkust T-shirt is still *$20.00*.
++
+image:images/secondary-price-updated.png[images/secondary-price-updated.png]

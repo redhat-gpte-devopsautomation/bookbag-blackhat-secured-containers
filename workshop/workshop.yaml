@@ -1,0 +1,9 @@
+---
+name: Bookbag Template
+modules:
+  activate:
+    - overview
+    - explore_pipelines
+    - image_signing
+    - trigger_pipeline
+    - reults
