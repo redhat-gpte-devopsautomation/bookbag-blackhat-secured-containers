@@ -10,7 +10,7 @@ The RHACS image check step will only fail now if the image is not signed with yo
 [source, role="execute"]
 ----
 cd
-TASKRUN=$(oc get taskrun -n software-supply-chain | grep app-globex-ui-pipeline | grep acs-image-check | tail -1 |
+TASKRUN=$(oc get taskrun -n software-supply-chain --sort-by={metadata.creationTimestamp} | grep app-globex-ui-pipeline | grep acs-image-check | tail -1 |
 awk '{print $1}')
 oc get taskrun $TASKRUN -n software-supply-chain -o json | jq '.metadata.annotations'
 ----
