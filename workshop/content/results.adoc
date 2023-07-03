@@ -2,7 +2,7 @@
 
 In this section we will investigate the results of the changes you've made in Openshift to enable image signing.  You should still be on the Pipelines screen in the project *software-supply-chain* from the the previous screen.
 
-. The *app-globex-ui-pipeline* will run successfully to completion.  This pipeline run would have signed our image and the RHACS check would be still be successful since the policy you enabled verified your image.
+. Wait until the *app-globex-ui-pipeline* pipeline runs to completion.  This pipeline run would have signed our image and the RHACS check would be still be successful since the policy you enabled verified your image.
 [NOTE]
 The RHACS image check step will only fail now if the image is not signed with your generated key.
 . Tekton Chains will create annotations on your TaskRun when signing your images.  This is a confirmation that your image was signed during this step in your pipeline.  The annotations to look out for are *chains.tekton.dev/signed* and *chains.tekton.dev/transparency*. To take a look at these annotations run the following command:

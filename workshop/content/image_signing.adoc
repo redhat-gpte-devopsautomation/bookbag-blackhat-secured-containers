@@ -74,7 +74,7 @@ cat cosign.pub
 ----
 A public key will be created in your home directory called cosign.pub.  This key is used for image signature verification.
 +
-. Copy the key as you will need it to configure a Signature Integration in RHACS.
+. Take note of the key as you will need it to copy it later to configure a Signature Integration in RHACS.
 . Go to the %rhacs_console_url%/[RHACS
 console] and log in with your credentials username: *%rhacs_admin_user_name%* and password: *%rhacs_admin_password%*.
 image:images/rhacs-login.png[images/rhacs-login.png]
@@ -89,7 +89,7 @@ image:images/rhacs-signature-integration.png[images/rhacs-signature-integration.
 .. For *Integration name* enter *cosign*
 .. Expand the *Cosign* field and select *Add new public key*
 .. For *Public key name* enter *cosign.pub*
-.. For *Public key value* paste the public key you printed on the terminal.  This is used by RHACS to verify your image signatures.
+.. For *Public key value* copy the public key from the terminal and paste it in this field.  This is used by RHACS to verify your image signatures.
 .. Click save
 +
 image:images/rhacs-signature-integration-entry.png[images/rhacs-signature-integration-entry.png]
