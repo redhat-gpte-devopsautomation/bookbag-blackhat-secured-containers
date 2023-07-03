@@ -6,4 +6,4 @@ modules:
     - explore_pipelines
     - image_signing
     - trigger_pipeline
-    - reults
+    - results
