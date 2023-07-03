@@ -21,7 +21,7 @@ To get started signing things in Chains, you must generate a keypair and instruc
 +
 [source, subs="attributes", role="execute"]
 ----
-ssh -o StrictHostKeyChecking=no %bastion_ssh_user_name%@%bastion_public_hostname%
+ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=30 %bastion_ssh_user_name%@%bastion_public_hostname%
 ----
 +
 Use the following password:
