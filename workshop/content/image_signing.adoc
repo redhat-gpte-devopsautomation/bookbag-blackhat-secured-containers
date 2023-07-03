@@ -18,14 +18,14 @@ To get started signing things in Chains, you must generate a keypair and instruc
 
 . Login into your bastion server by executing the below command:
 +
-[source,role="execute"]
+[source, subs="attributes", role="execute"]
 ----
 ssh -o StrictHostKeyChecking=no %bastion_ssh_user_name%@%bastion_public_hostname%
 ----
 +
 Use the below password:
 +
-[source,role="execute"]
+[source, subs="attributes", role="execute"]
 ----
 %bastion_ssh_password%
 ----
