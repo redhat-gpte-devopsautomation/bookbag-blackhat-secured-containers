@@ -65,7 +65,6 @@ Wait for the *AVAILABLE* column to display *1*
 NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
 tekton-chains-controller   1/1     1            1           106m
 ----
-+
 . Once the deployment shows 1 pod available, run the following command to create a secret called signing-secrets in the openshift-pipelines namespace which Chains will use to sign your images:
 +
 [source, role="execute"]
