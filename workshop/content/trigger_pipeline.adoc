@@ -4,12 +4,17 @@
 [arabic]
 To get our pipeline to sign our image, we need to trigger a new pipeline run.  To do this we need to update a file in our source code repository.  This change will initiate a webhook call that will trigger a run of our pipeline.
 
-. Run the below command to clone the source code repository to your lab environment:
+. Switch back to your home directory and ensure previous source code directories are removed:
 +
-[source, bash, role="terminal:execute"]
+[source, bash, role="execute"]
 ----
 cd
 rm -rf globex-ui
+----
+. Run the below command to clone the source code repository to your lab environment:
++
+[source, bash, role="execute"]
+----
 git clone %gitea_repo_url%
 ----
 . Make a change to README.md file in the source code:
