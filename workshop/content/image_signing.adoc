@@ -108,7 +108,10 @@ This policy is currently disabled.
 +
 image:images/rhacs-policy-management.png[images/rhacs-policy-management.png]
 +
-. Scroll down until you locate the policy *Trusted Signature Policy*.  Click the ellipse at the end and select *Edit policy*.
+. The policy you are looking for is called *0-Trusted Signature Policy*.  It should be at the top of the list.
++
+image:images/rhacs-policy-management-list.png[images/rhacs-policy-management-list.png]
+. Click the ellipse at the end and select *Edit policy*.
 +
 image:images/rhacs-policy-actions-popup.png[images/rhacs-policy-actions-popup.png]
 +
