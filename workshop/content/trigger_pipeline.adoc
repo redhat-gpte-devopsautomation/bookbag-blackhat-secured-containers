@@ -6,7 +6,7 @@ To get our pipeline to sign our image, we need to trigger a new pipeline run.  T
 
 . Run the below command to clone the source code repository to your lab environment:
 +
-[source, bash, role="execute"]
+[source, bash, role="terminal:execute"]
 ----
 cd
 rm -rf globex-ui
