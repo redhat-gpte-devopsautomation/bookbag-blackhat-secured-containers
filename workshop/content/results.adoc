@@ -32,3 +32,5 @@ cd
 IMAGE=$(oc get deployment globex-ui -n globex -o json | jq -r '.spec.template.spec.containers[0].image')
 cosign verify --key=cosign.pub $IMAGE
 ----
+[NOTE]
+If you receive the error *Error: no matching signatures*, wait 10 seconds and retry the above command.  It is possible that Openshift Gitops has not yet synced your signed image to the cluster.
