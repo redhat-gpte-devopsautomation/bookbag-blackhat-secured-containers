@@ -4,7 +4,7 @@
 [arabic]
 To get our pipeline to sign our image, we need to trigger a new pipeline run.  To do this we need to update a file in our source code repository.  This change will initiate a webhook call that will trigger a run of our pipeline.
 
-. Switch back to your home directory and ensure previous source code directories are removed:
+. Switch back to your home directory and clean up any previous source folders:
 +
 [source, bash, role="execute"]
 ----
