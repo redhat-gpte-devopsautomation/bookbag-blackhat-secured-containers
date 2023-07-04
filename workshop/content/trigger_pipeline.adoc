@@ -10,7 +10,7 @@ To get our pipeline to sign our image, we need to trigger a new pipeline run.  T
 ----
 cd
 rm -rf globex-ui
-git clone `%gitea_repo_url%`
+git clone `+%gitea_repo_url%+`
 ----
 . Make a change to README.md file in the source code:
 +
