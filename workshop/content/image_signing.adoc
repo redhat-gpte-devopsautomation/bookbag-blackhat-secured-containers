@@ -98,7 +98,7 @@ image:images/rhacs-signature-integration.png[images/rhacs-signature-integration.
 +
 image:images/rhacs-signature-integration-entry.png[images/rhacs-signature-integration-entry.png]
 +
-. For convenience, we have already set up a policy in ACS called “Trusted Signature Policy” that checks an image for a valid signature.  This policy is enforced during the below lifecycle stages:
+. For convenience, we have already set up a policy in ACS called *0-Trusted Signature Policy* that checks an image for a valid signature.  This policy is enforced during the below lifecycle stages:
 .. Build  - Runs when doing a roxctl image check on an image.  This will trigger a violation if the image passed to the command is not signed with our signature.
 .. Deployment - Will prevent deployments to Openshift if images are not signed with our signature
 +
