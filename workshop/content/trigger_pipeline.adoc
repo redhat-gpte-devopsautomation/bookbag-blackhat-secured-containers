@@ -46,6 +46,8 @@ git push
 . Switch back to your Openshift Console and select *Pipelines > Pipelines* from the left menu and ensure that the project is *software-supply-chain*.  Your changes would have triggered 2 new pipeline runs.
 +
 image:images/openshift-pipeline-runs.png[images/openshift-pipeline-runs.png]
-. Once the pipeline completes, switch back to the %app_dev_url%/[Globex Application] and refresh the page.  You should notice the word *BLACKHAT* at the bottom of the screen.
+. Once the pipeline completes, switch back to the %app_dev_url%/[Globex Application] and refresh the page.  You should notice the words *Black Hat Conference* at the bottom of the screen.
++
+image:images/openshift-globex-updated.png[images/openshift-globex-updated.png]
 [NOTE]
-If the text does not appear, keep refreshing as the Openshift Gitops controller might still be in the process of deploying the new image.
+This is an optional step so don't stress too much if you don't see your update immediately.  The Openshift Gitops controller might still be in the process of deploying the new image.  Keep refreshing until it appears.
