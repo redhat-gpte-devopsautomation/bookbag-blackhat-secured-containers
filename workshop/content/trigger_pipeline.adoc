@@ -22,7 +22,7 @@ git clone %gitea_repo_url%
 [source, role="execute"]
 ----
 cd globex-ui
-sed -i 's/<\/body>/  <center><b><font size="5">BLACKHAT<\/font><\/b><\/center>\n<\/body>/g' src/index.html
+sed -i 's/<\/body>/  <center><b><font size="5">>Black Hat Conference<\/font><\/b><\/center>\n<\/body>/g' src/index.html
 
 ----
 . Stage your changes:
