@@ -17,12 +17,13 @@ rm -rf globex-ui
 ----
 git clone %gitea_repo_url%
 ----
-. Make a change to README.md file in the source code:
+. Change the globex frontent to show *BLACKHAT* on the home page:
 +
 [source, role="execute"]
 ----
 cd globex-ui
-echo "Making a change..." >> README.md
+sed -i 's/<\/body>/  <center><b><font size="5">BLACKHAT<\/font><\/b><\/center>\n<\/body>/g' src/index.html
+
 ----
 . Stage your changes:
 +
@@ -45,3 +46,6 @@ git push
 . Switch back to your Openshift Console and select *Pipelines > Pipelines* from the left menu and ensure that the project is *software-supply-chain*.  Your changes would have triggered 2 new pipeline runs.
 +
 image:images/openshift-pipeline-runs.png[images/openshift-pipeline-runs.png]
+. Once the pipeline completes, switch back to the %app_dev_url%/[Globex Application] and refresh the page.  You should notice the word *BLACKHAT* at the bottom of the screen.
+[NOTE]
+If the text does not appear, keep refreshing as the Openshift Gitops controller might still be in the process of deploying the new image.
