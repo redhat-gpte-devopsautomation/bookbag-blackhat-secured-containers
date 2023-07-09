@@ -17,12 +17,12 @@ rm -rf globex-ui
 ----
 git clone %gitea_repo_url%
 ----
-. Change the globex frontent to show *BLACKHAT* on the home page:
+. Change the globex frontent to show *Black Hat Conference* on the home page:
 +
 [source, role="execute"]
 ----
 cd globex-ui
-sed -i 's/<\/body>/  <center><b><font size="5">>Black Hat Conference<\/font><\/b><\/center>\n<\/body>/g' src/index.html
+sed -i 's/<\/body>/  <center><b><font size="5">Black Hat Conference<\/font><\/b><\/center>\n<\/body>/g' src/index.html
 
 ----
 . Stage your changes:
