@@ -51,3 +51,4 @@ image:images/openshift-pipeline-runs.png[images/openshift-pipeline-runs.png]
 image:images/openshift-globex-updated.png[images/openshift-globex-updated.png]
 [NOTE]
 This is an optional step so don't stress too much if you don't see your update immediately.  The Openshift Gitops controller might still be in the process of deploying the new image.  Keep refreshing until it appears.
+. The change on the webpage was successfully implemented due to its validation through the signature process, without which the change would not have been visible on the final site.
